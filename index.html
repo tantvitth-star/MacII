@@ -42,7 +42,24 @@ input{width:100%;padding:9px;border:1px solid #bbb;border-radius:7px;font-size:1
 #saved{font-size:13px;margin-top:8px}
 @media(max-width:360px){main{padding-left:8px;padding-right:8px}#clock{font-size:56px}.frame{padding:13px 3%}.paper{padding:12px 10px}.fields{font-size:13px}}
 @media(min-width:600px){main{padding-left:20px;padding-right:20px}.frame{padding:24px 5%}.paper{padding:22px 28px}}
-</style>
+</style>.paper{position:relative;overflow:hidden}
+.watermark-pattern{
+ position:absolute;inset:0;z-index:0;
+ pointer-events:none;overflow:hidden;
+}
+.watermark-pattern span{
+ position:absolute;
+ color:#d0d0d0;
+ opacity:.55;
+ font-size:16px;
+ font-weight:600;
+ white-space:nowrap;
+ transform:rotate(-20deg);
+}
+.paper>h2,.paper>h3,.paper>.fields,
+.paper>.rules,.paper>.demo{
+ position:relative;z-index:1;
+}
 </head>
 <body>
 <header><button aria-label="Lên đầu trang" onclick="window.scrollTo({top:0,behavior:'smooth'})">‹</button><b>Smartphone/Watch Tag</b></header>
@@ -52,9 +69,18 @@ input{width:100%;padding:9px;border:1px solid #bbb;border-radius:7px;font-size:1
   <div class="notice" id="notice">Đây là bản DEMO cá nhân. Không tạo mã QR, thẻ ra vào hoặc quyền truy cập thực tế.</div>
   <section class="frame" id="card"><div class="paper">
     <div class="watermark"> <div class="watermark"><div class="watermark">
-V2113258　中文新<br><br>
-V2113258　中文新<br><br>
-V2113258　中文新
+<div class="watermark-pattern">
+<span style="top:2%;left:-5%">V2113258 中文新</span>
+<span style="top:2%;left:58%">V2113258 中文新</span>
+<span style="top:20%;left:15%">V2113258 中文新</span>
+<span style="top:22%;left:75%">V2113258 中文新</span>
+<span style="top:42%;left:-10%">V2113258 中文新</span>
+<span style="top:43%;left:50%">V2113258 中文新</span>
+<span style="top:63%;left:15%">V2113258 中文新</span>
+<span style="top:65%;left:75%">V2113258 中文新</span>
+<span style="top:84%;left:-5%">V2113258 中文新</span>
+<span style="top:86%;left:55%">V2113258 中文新</span>
+</div>
 </div>
 </div></div>
     <h2>Mac II Mang theo điện thoại thông minh/đồng hồ</h2>
