@@ -44,7 +44,36 @@ input{width:100%;padding:9px;border:1px solid #bbb;border-radius:7px;font-size:1
 #saved{font-size:13px;margin-top:8px}
 @media(max-width:360px){main{padding-left:8px;padding-right:8px}#clock{font-size:56px}.frame{padding:13px 3%}.paper{padding:12px 10px}.fields{font-size:13px}.watermark-pattern span{font-size:13px}}
 @media(min-width:600px){main{padding-left:20px;padding-right:20px}.frame{padding:24px 5%}.paper{padding:22px 28px}}
-</style>
+.floating-squares{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+
+.floating-squares span{
+  position:absolute;
+  right:-70px;
+  width:35px;
+  height:35px;
+  border:1px solid rgba(160,190,200,.25);
+  background:rgba(180,210,220,.10);
+  animation: squareMove linear infinite;
+}
+
+.floating-squares span:nth-child(1){top:12%;width:28px;height:28px;animation-duration:12s}
+.floating-squares span:nth-child(2){top:35%;width:45px;height:45px;animation-duration:17s;animation-delay:-5s}
+.floating-squares span:nth-child(3){top:60%;width:22px;height:22px;animation-duration:14s;animation-delay:-8s}
+.floating-squares span:nth-child(4){top:78%;width:38px;height:38px;animation-duration:19s;animation-delay:-3s}
+.floating-squares span:nth-child(5){top:48%;width:18px;height:18px;animation-duration:11s;animation-delay:-6s}
+
+@keyframes squareMove{
+  from{transform:translateX(0) rotate(0deg);opacity:0}
+  10%{opacity:.7}
+  90%{opacity:.7}
+  to{transform:translateX(-110vw) rotate(180deg);opacity:0}
+}</style>
 </head>
 <body>
 <header><button aria-label="Lên đầu trang" onclick="window.scrollTo({top:0,behavior:'smooth'})">‹</button><b>Smartphone/Watch Tag</b></header>
@@ -60,7 +89,13 @@ input{width:100%;padding:9px;border:1px solid #bbb;border-radius:7px;font-size:1
 <span style="top:61%;left:10%">V2113258　中文新</span><span style="top:62%;left:72%">V2113258　中文新</span>
 <span style="top:81%;left:-5%">V2113258　中文新</span><span style="top:83%;left:56%">V2113258　中文新</span>
 </div>
-<div class="paper-content">
+<div class="paper-content"><div class="floating-squares">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 <h2>Mac II Mang theo điện thoại thông minh/đồng hồ</h2>
 <h3 style="display:flex;align-items:center;justify-content:center;gap:10px">Thẻ kiểm soát1
 <img src="control-icon-exact.png" width="64" height="64" alt="Biểu tượng thẻ kiểm soát" style="object-fit:contain;vertical-align:middle"></h3>
